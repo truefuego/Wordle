@@ -1,0 +1,28 @@
+.keyboard-key {
+    display: flex;
+    cursor: pointer;
+    height: 42px;
+    text-align: center;
+    border: 0;
+    border-radius: 2px;
+    background-color: #f1f1f1;
+    align-items: center;
+    justify-content: center;
+}
+
+.keyboard-key[key-size = "large"] {
+    width: 44px;
+    font-size: 10px;
+}
+
+.keyboard-key[key-size = "small"] {
+    width: 28px;
+}
+
+.keyboard-key[key-letter = false] {
+    font-size: 16px;
+}
+
+.keyboard-key[key-letter = true] {
+    font-size: 16px;
+}
