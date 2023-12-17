@@ -3,11 +3,26 @@
     width: 100vw;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
+    overflow-x: hidden;
+    /* overflow: hidden; */
+}
+
+@media screen and (max-width : 500px) {
+    .app {
+        gap: 40px;
+        height: fit-content;
+    }
 }
 
 .app h1 {
+    pointer-events: none;
+    color: #fff;
+}
+
+.app p {
+    pointer-events: none;
     color: #fff;
 }
 

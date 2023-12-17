@@ -1,0 +1,33 @@
+.letter-tile{
+    pointer-events: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.letter-tile p{
+    margin: 0;
+    font-size: 28px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.letter-tile[data-state = "correct"] {
+    border: none;
+    background-color: #538d4e;
+}
+
+.letter-tile[data-state = "pending"] {
+    border: 1px solid #3a3b3c;
+}
+
+.letter-tile[data-state = "incorrect"] {
+    background-color: #3a3b3c;
+}
+
+.letter-tile[data-state = "partially"] {
+    background-color: #b59f3b;
+}

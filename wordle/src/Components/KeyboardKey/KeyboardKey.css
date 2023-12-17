@@ -1,22 +1,25 @@
 .keyboard-key {
     display: flex;
     cursor: pointer;
-    height: 42px;
+    height: 54px;
     text-align: center;
     border: 0;
     border-radius: 2px;
-    background-color: #f1f1f1;
+    background-color: #818384;
     align-items: center;
     justify-content: center;
+    color: #fff;
 }
 
 .keyboard-key[key-size = "large"] {
-    width: 44px;
+    width: 56px;
     font-size: 10px;
 }
 
 .keyboard-key[key-size = "small"] {
-    width: 28px;
+    font-size: 22px;
+    font-weight: bold;
+    width: 36px;
 }
 
 .keyboard-key[key-letter = false] {
@@ -25,4 +28,10 @@
 
 .keyboard-key[key-letter = true] {
     font-size: 16px;
+}
+
+@media screen and (max-width : 500px) {
+    .keyboard-key {
+        font-size: 20px;
+    }
 }

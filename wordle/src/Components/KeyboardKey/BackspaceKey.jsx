@@ -1,9 +1,14 @@
 import React from 'react'
 import './KeyboardKey.css'
+import { wordStore } from '../wordStore'
 
 const BackspaceKey = ({size}) => {
+  const { guessingWord, removeLetter } = wordStore((state) => ({guessingWord: state.guessingWord, removeLetter: state.removeLetter}))
   const handleBackspacePress = () => {
-    console.log("Backspace Pressed")
+    if(guessingWord.length > 0) {
+      removeLetter()
+      console.log("Backspace Pressed!")
+    }
   }
 
   return (
