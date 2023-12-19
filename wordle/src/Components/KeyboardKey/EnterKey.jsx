@@ -31,7 +31,7 @@ const EnterKey = ({size,isLetter}) => {
             resetGame()
             break;
           }
-          if(guessedWordsIndex === 5) {
+          if(guessedWordsIndex === 6) {
             addGame()
             resetGame()
             break;
