@@ -38,3 +38,84 @@
     width: 100%;
     border-bottom: 1px solid #777;
 }
+
+.container{
+    position: relative;
+}
+
+.popup-container{
+    width: 100%;
+    bottom: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    height: 300px;
+    z-index: 11;
+    border-top: 1px solid #898989;
+    background-color: #343434;
+    color: #fff;
+    animation: 256ms pop-upwards ;
+}
+
+@keyframes pop-upwards {
+    0% {
+        height: 0px;
+        transform: ease-out;
+    }
+    100%{
+        height: 300px;
+        transform: ease-in;
+    }
+}
+
+.reload-button{
+    cursor: pointer;
+    border: none;
+    background-color: #111;
+    color: #fff;
+    font-size: 16px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+    padding: 16px 28px;
+    border-radius: 28px;
+    margin: 20px 0;
+}
+
+.popup-tag{
+    font-size: 20px;
+
+}
+
+.total-games{
+    margin: 0;
+}
+
+.game-stats-container {
+    margin: 10px;
+    display: flex;
+    gap: 30px;
+    height: 100px;
+}
+
+.game-stats-bar-container{
+    position: relative;
+}
+
+.game-bar-index{
+    margin: 0;
+    text-align: center;
+    padding: 80%;
+}
+
+.game-stats-bar{
+    position: absolute;
+    bottom: 0;
+    width: 20px;
+    background-color: #4f7;
+}
+
+.total-games-dist{
+    margin: 10px 0;
+}

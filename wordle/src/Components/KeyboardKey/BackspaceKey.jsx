@@ -7,7 +7,6 @@ const BackspaceKey = ({size}) => {
   const handleBackspacePress = () => {
     if(guessingWord.length > 0) {
       removeLetter()
-      console.log("Backspace Pressed!")
     }
   }
 

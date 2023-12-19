@@ -35,3 +35,24 @@
         font-size: 20px;
     }
 }
+
+.keyboard-key[data-state = "correct"] {
+    border: none;
+    background-color: #538d4e;
+}
+
+.keyboard-key[data-state = "pending"] {
+    border: 1px solid #3a3b3c;
+}
+
+.keyboard-key[data-state = "current-pending"] {
+    border: 1px solid #fff;
+}
+
+.keyboard-key[data-state = "incorrect"] {
+    background-color: #3a3b3c;
+}
+
+.keyboard-key[data-state = "partially"] {
+    background-color: #b59f3b;
+}

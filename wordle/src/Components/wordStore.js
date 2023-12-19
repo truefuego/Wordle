@@ -13,6 +13,13 @@ export const wordStore = create((set) => {
             targetWord: [...Words[Math.floor(Math.random()*1000000) % Words.length].toUpperCase()]
         })),
 
+        gameOver: false,
+        resetGame: () => set((state) => {
+            return {
+                gameOver: !state.gameOver,
+            }
+        }),
+
         guessingWord: [],
         guessingWordIndex: 0,
         guessedWords: [
@@ -63,13 +70,112 @@ export const wordStore = create((set) => {
         }),
 
         markWordAsGuessed: () => set((state) => {
-            // const newGuessedWords = [...state.guessedWords];
-            // newGuessedWords[state.guessedWordsIndex].letters = state.guessingWord;
             return {
                 guessingWord: [],
                 guessingWordIndex: 0,
                 guessedWordsIndex: state.guessedWordsIndex + 1
             }
-        })
+        }),
+
+
+        letterState: {
+            "A": "pending",
+            "B": "pending",
+            "C": "pending",
+            "D": "pending",
+            "E": "pending",
+            "F": "pending",
+            "G": "pending",
+            "H": "pending",
+            "I": "pending",
+            "J": "pending",
+            "K": "pending",
+            "L": "pending",
+            "M": "pending",
+            "N": "pending",
+            "O": "pending",
+            "P": "pending",
+            "Q": "pending",
+            "R": "pending",
+            "S": "pending",
+            "T": "pending",
+            "U": "pending",
+            "V": "pending",
+            "W": "pending",
+            "Y": "pending",
+            "Z": "pending"
+        },
+
+        changeLetterState: (ch, letterColor) => set((state) => {
+            let tempMap = state.letterState
+            if(tempMap[ch] !== "correct")
+                tempMap[ch] = letterColor
+            return {
+                letterState: tempMap
+            }
+        }),
+        
+        restartGame: () => set((state) => {
+            return {
+                gameOver: !state.gameOver,
+                targetWord: "",
+                guessingWord: [],
+                guessingWordIndex: 0,
+                guessedWords: [
+                    { 
+                        index: 0,
+                        letters: ['','','','','']
+                    },
+                    { 
+                        index: 1,
+                        letters: ['','','','','']
+                    },
+                    { 
+                        index: 2,
+                        letters: ['','','','','']
+                    },
+                    { 
+                        index: 3,
+                        letters: ['','','','','']
+                    },
+                    { 
+                        index: 4,
+                        letters: ['','','','','']
+                    },
+                    { 
+                        index: 5,
+                        letters: ['','','','','']
+                    }
+                ],
+                guessedWordsIndex: 0,
+                letterState: {
+                    "A": "pending",
+                    "B": "pending",
+                    "C": "pending",
+                    "D": "pending",
+                    "E": "pending",
+                    "F": "pending",
+                    "G": "pending",
+                    "H": "pending",
+                    "I": "pending",
+                    "J": "pending",
+                    "K": "pending",
+                    "L": "pending",
+                    "M": "pending",
+                    "N": "pending",
+                    "O": "pending",
+                    "P": "pending",
+                    "Q": "pending",
+                    "R": "pending",
+                    "S": "pending",
+                    "T": "pending",
+                    "U": "pending",
+                    "V": "pending",
+                    "W": "pending",
+                    "Y": "pending",
+                    "Z": "pending"
+                }
+            }
+        }),
     }
 })

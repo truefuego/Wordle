@@ -1,56 +1,19 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './LetterGrid.css'
-import LetterTile from './LetterTile/LetterTile'
 import { wordStore } from '../wordStore'
+import LetterRow from './LetterRow/LetterRow'
 
 const LetterGrid = () => {
-  const { guessedWordsIndex, guessedWords } = wordStore((state) => ({guessedWordsIndex: state.guessedWordsIndex,guessedWords: state.guessedWords}))
+  const { guessedWordsIndex, guessedWords, targetWord } = wordStore((state) => ({guessedWordsIndex: state.guessedWordsIndex,guessedWords: state.guessedWords, guessingWord: state.guessingWord, targetWord: state.targetWord}))
 
   return (
     <div className='letter-grid'>
-      {guessedWords.map((item) => (<div className='letter-grid-row' index={item.index}>{item.letters.map((letter) => (<LetterTile state={"pending"} letter={letter}/>))}</div>))}
-      {/**<div className='letter-grid-row'>
-        <LetterTile state={"pending"}/>
-        <LetterTile state={"pending"}/>
-        <LetterTile state={"pending"}/>
-        <LetterTile state={"pending"}/>
-        <LetterTile state={"pending"}/>
-      </div>
-      <div className='letter-grid-row'>
-        <LetterTile state={"pending"}/>
-        <LetterTile state={"pending"}/>
-        <LetterTile state={"pending"}/>
-        <LetterTile state={"pending"}/>
-        <LetterTile state={"pending"}/>
-      </div>
-      <div className='letter-grid-row'>
-        <LetterTile state={"pending"}/>
-        <LetterTile state={"pending"}/>
-        <LetterTile state={"pending"}/>
-        <LetterTile state={"pending"}/>
-        <LetterTile state={"pending"}/>
-      </div>
-      <div className='letter-grid-row'>
-        <LetterTile state={"pending"}/>
-        <LetterTile state={"pending"}/>
-        <LetterTile state={"pending"}/>
-        <LetterTile state={"pending"}/>
-        <LetterTile state={"pending"}/>
-      </div>
-      <div className='letter-grid-row'>
-        <LetterTile state={"pending"}/>
-        <LetterTile state={"pending"}/>
-        <LetterTile state={"pending"}/>
-        <LetterTile state={"pending"}/>
-        <LetterTile state={"pending"}/>
-      </div>
-      <div className='letter-grid-row'>
-        <LetterTile state={"pending"}/>
-        <LetterTile state={"pending"}/>
-        <LetterTile state={"pending"}/>
-        <LetterTile state={"pending"}/>
-        <LetterTile state={"pending"}/>
-      </div> */}
+      <LetterRow word={guessedWords[0].letters} targetWord={targetWord} index={guessedWords[0].index} currentWordIndex={guessedWordsIndex}/>
+      <LetterRow word={guessedWords[1].letters} targetWord={targetWord} index={guessedWords[1].index} currentWordIndex={guessedWordsIndex}/>
+      <LetterRow word={guessedWords[2].letters} targetWord={targetWord} index={guessedWords[2].index} currentWordIndex={guessedWordsIndex}/>
+      <LetterRow word={guessedWords[3].letters} targetWord={targetWord} index={guessedWords[3].index} currentWordIndex={guessedWordsIndex}/>
+      <LetterRow word={guessedWords[4].letters} targetWord={targetWord} index={guessedWords[4].index} currentWordIndex={guessedWordsIndex}/>
+      <LetterRow word={guessedWords[5].letters} targetWord={targetWord} index={guessedWords[5].index} currentWordIndex={guessedWordsIndex}/>
     </div>
   )
 }
