@@ -16,7 +16,7 @@ export const wordStore = create((set) => {
         gameOver: false,
         resetGame: () => set((state) => {
             return {
-                gameOver: !state.gameOver,
+                gameOver: true,
             }
         }),
 
@@ -117,7 +117,7 @@ export const wordStore = create((set) => {
         
         restartGame: () => set((state) => {
             return {
-                gameOver: !state.gameOver,
+                gameOver: false,
                 targetWord: "",
                 guessingWord: [],
                 guessingWordIndex: 0,
