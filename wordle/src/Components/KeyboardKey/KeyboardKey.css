@@ -12,14 +12,14 @@
 }
 
 .keyboard-key[key-size = "large"] {
-    width: 56px;
+    width: 62px;
     font-size: 10px;
 }
 
 .keyboard-key[key-size = "small"] {
     font-size: 22px;
     font-weight: bold;
-    width: 36px;
+    width: 40px;
 }
 
 .keyboard-key[key-letter = false] {
