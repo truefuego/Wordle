@@ -10,6 +10,8 @@ const notify = () => toast('Enter a valid word!')
 const EnterKey = ({size,isLetter}) => {
   const {addStat,addGame} = useGameStatsStore((state) => ({addStat: state.addStat, addGame: state.addGame}))
   const { guessedWords, guessedWordsIndex, guessingWord, markWordAsGuessed, targetWord ,resetGame} = wordStore((state) => ({guessedWordsIndex: state.guessedWordsIndex, gameOver: state.gameOver, resetGame: state.resetGame, targetWord: state.targetWord,guessedWords: state.guessedWords,guessingWord: state.guessingWord, markWordAsGuessed:state.markWordAsGuessed}))
+  
+  
   const handleEnterPress = () => {
     const exists = Words.includes(guessingWord.join('').toLowerCase())
 
@@ -31,10 +33,10 @@ const EnterKey = ({size,isLetter}) => {
             resetGame()
             break;
           }
-          if(guessedWordsIndex === 5) {
+          if(i === 5 && guessedWordsIndex === 5  && tempGuessedWord !== tempTargetWord) {
             addGame()
             resetGame()
-            break;
+            return;
           }
         }
       }
@@ -49,7 +51,13 @@ const EnterKey = ({size,isLetter}) => {
   }
 
   return (
-    <button className='keyboard-key' key-size={size} key-letter={isLetter} onClick={() => handleEnterPress()}>ENTER</button>
+    <button className='keyboard-key' key-size={size} key-letter={isLetter} onClick={() => {
+      console.log(guessedWordsIndex)
+      if(guessedWordsIndex === 6) {
+        addGame()
+      }
+      handleEnterPress()
+    }}>ENTER</button>
   )
 }
 

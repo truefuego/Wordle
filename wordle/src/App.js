@@ -78,12 +78,12 @@ function App() {
             addStat(guessedWordsIndex)
             addGame()
             resetGame()
-            break;
+            return;
           }
-          if(guessedWordsIndex === 5) {
+          if(i === 5 && guessedWordsIndex === 5  && tempGuessedWord !== tempTargetWord) {
             addGame()
             resetGame()
-            break;
+            return;
           }
         }
       }
@@ -132,6 +132,7 @@ function App() {
           <div onClick={() => handleShowStats()} className='header-icons'><svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M184 448h48c4.4 0 8-3.6 8-8V72c0-4.4-3.6-8-8-8h-48c-4.4 0-8 3.6-8 8v368c0 4.4 3.6 8 8 8zM88 448h48c4.4 0 8-3.6 8-8V296c0-4.4-3.6-8-8-8H88c-4.4 0-8 3.6-8 8v144c0 4.4 3.6 8 8 8zM280.1 448h47.8c4.5 0 8.1-3.6 8.1-8.1V232.1c0-4.5-3.6-8.1-8.1-8.1h-47.8c-4.5 0-8.1 3.6-8.1 8.1v207.8c0 4.5 3.6 8.1 8.1 8.1zM368 136.1v303.8c0 4.5 3.6 8.1 8.1 8.1h47.8c4.5 0 8.1-3.6 8.1-8.1V136.1c0-4.5-3.6-8.1-8.1-8.1h-47.8c-4.5 0-8.1 3.6-8.1 8.1z"></path></svg></div>
         </div>
         <Toaster />
+        <p className='header'>{targetWord}</p>
         <LetterGrid />
         <Keyboard />
       </div>
