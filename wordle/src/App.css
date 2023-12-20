@@ -12,7 +12,7 @@
 @media screen and (max-width : 500px) {
     .app {
         gap: 40px;
-        height: fit-content;
+        height: 100vh;
     }
 }
 
@@ -30,13 +30,21 @@
     background-color: #343434;
     width: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid #777;
     align-items: center;
 }
 
-.horizontal-line{
-    width: 100%;
-    border-bottom: 1px solid #777;
+.header-icons{
+    cursor: pointer;
+    margin: 0px 30px;
+    border-radius: 10px;
+}
+
+.header-icons svg{
+    color: #eaebec;
+    font-size: 32px;
 }
 
 .container{
@@ -71,6 +79,17 @@
     }
 }
 
+@keyframes pop-how-to-play {
+    0% {
+        height: 0px;
+        transform: ease-in;
+    }
+    100%{
+        height: 500px;
+        transform: ease-out;
+    }
+}
+
 .reload-button{
     cursor: pointer;
     border: none;
@@ -90,6 +109,8 @@
 
 .total-games{
     margin: 0;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .game-stats-container {
@@ -101,21 +122,61 @@
 
 .game-stats-bar-container{
     position: relative;
+    display: flex;
 }
 
 .game-bar-index{
     margin: 0;
     text-align: center;
+    z-index: 111 !important;
     padding: 80%;
+    color: white;
 }
 
 .game-stats-bar{
     position: absolute;
     bottom: 0;
     width: 20px;
-    background-color: #4f7;
+    z-index: 12 !important;
+    background-color: rgb(32, 128, 64);
 }
 
 .total-games-dist{
     margin: 10px 0;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.how-to-play{
+    width: 100%;
+    bottom: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    height: 600px;
+    z-index: 11;
+    border-top: 1px solid #898989;
+    background-color: #343434;
+    color: #fff;
+    animation: 256ms pop-how-to-play ;
+}
+
+
+.back-button{
+    cursor: pointer;
+    border: none;
+    background-color: #088;
+    color: #fff;
+    font-size: 16px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+    padding: 16px 28px;
+    border-radius: 28px;
+    margin: 20px 0;
+}
+
+.pop-up-image{
+    width: 200px;
 }

@@ -4,7 +4,7 @@
     height: 54px;
     text-align: center;
     border: 0;
-    border-radius: 2px;
+    border-radius: 6px;
     background-color: #818384;
     align-items: center;
     justify-content: center;
@@ -34,6 +34,26 @@
     .keyboard-key {
         font-size: 20px;
     }
+
+    .keyboard-key[key-size = "large"] {
+        width: 13vw;
+        font-size: 10px;
+    }
+    
+    .keyboard-key[key-size = "small"] {
+        font-size: 22px;
+        font-weight: bold;
+        width: 8.5vw;
+    }
+
+    .keyboard-key[key-letter = false] {
+        font-size: 16px;
+    }
+    
+    .keyboard-key[key-letter = true] {
+        font-size: 16px;
+    }
+    
 }
 
 .keyboard-key[data-state = "correct"] {
