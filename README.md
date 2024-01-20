@@ -1,1 +1,1 @@
-Website: wordle-hard.netlify.app
+Website: https://wordle-hard.netlify.app
